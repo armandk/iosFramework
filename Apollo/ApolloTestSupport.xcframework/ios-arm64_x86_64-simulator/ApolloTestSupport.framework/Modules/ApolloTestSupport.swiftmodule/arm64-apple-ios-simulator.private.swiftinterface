@@ -1,0 +1,71 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ApolloTestSupport
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+@_exported import ApolloAPI
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+@propertyWrapper public struct Field<T> {
+  public init(_ field: Swift.StaticString)
+  public var wrappedValue: ApolloTestSupport.Field<T> {
+    get
+    set
+  }
+}
+@dynamicMemberLookup public class Mock<O> : ApolloTestSupport.AnyMock, Swift.Hashable where O : ApolloTestSupport.MockObject {
+  public var _data: [Swift.String : Swift.AnyHashable]
+  public init()
+  public var __typename: Swift.String {
+    get
+  }
+  public subscript<T>(dynamicMember keyPath: Swift.KeyPath<O.MockFields, ApolloTestSupport.Field<T>>) -> T? where T : ApolloAPI.AnyScalarType, T : Swift.Hashable {
+    get
+    set
+  }
+  public subscript<T>(dynamicMember keyPath: Swift.KeyPath<O.MockFields, ApolloTestSupport.Field<T>>) -> T.MockValueCollectionType.Element? where T : ApolloTestSupport.MockFieldValue {
+    get
+    set
+  }
+  public subscript<T>(dynamicMember keyPath: Swift.KeyPath<O.MockFields, ApolloTestSupport.Field<Swift.Array<T>>>) -> [T.MockValueCollectionType.Element]? where T : ApolloTestSupport.MockFieldValue {
+    get
+    set
+  }
+  public var _selectionSetMockData: ApolloAPI.JSONObject {
+    get
+  }
+  public static func == (lhs: ApolloTestSupport.Mock<O>, rhs: ApolloTestSupport.Mock<O>) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  @objc deinit
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ApolloAPI.SelectionSet {
+  public static func from(_ mock: ApolloTestSupport.AnyMock, withVariables variables: [Swift.String : ApolloAPI.GraphQLOperationVariableValue]? = nil) -> Self
+}
+public protocol AnyMock {
+  var _selectionSetMockData: ApolloAPI.JSONObject { get }
+}
+public protocol MockObject : ApolloTestSupport.MockFieldValue {
+  associatedtype MockFields
+  associatedtype MockValueCollectionType = Swift.Array<ApolloTestSupport.Mock<Self>>
+  static var objectType: ApolloAPI.Object { get }
+  static var _mockFields: Self.MockFields { get }
+}
+public protocol MockFieldValue {
+  associatedtype MockValueCollectionType : Swift.Collection
+}
+extension ApolloAPI.Interface : ApolloTestSupport.MockFieldValue {
+  public typealias MockValueCollectionType = Swift.Array<ApolloTestSupport.AnyMock>
+}
+extension ApolloAPI.Union : ApolloTestSupport.MockFieldValue {
+  public typealias MockValueCollectionType = Swift.Array<ApolloTestSupport.AnyMock>
+}
+extension Swift.Optional : ApolloTestSupport.MockFieldValue where Wrapped : ApolloTestSupport.MockFieldValue {
+  public typealias MockValueCollectionType = Swift.Array<Swift.Optional<Wrapped.MockValueCollectionType.Element>>
+}
+extension Swift.Array : ApolloTestSupport.MockFieldValue where Element : ApolloTestSupport.MockFieldValue {
+  public typealias MockValueCollectionType = Swift.Array<Element.MockValueCollectionType>
+}

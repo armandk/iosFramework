@@ -1,0 +1,4 @@
+framework module ApolloTestSupport {
+  header "ApolloTestSupport-Swift.h"
+  requires objc
+}

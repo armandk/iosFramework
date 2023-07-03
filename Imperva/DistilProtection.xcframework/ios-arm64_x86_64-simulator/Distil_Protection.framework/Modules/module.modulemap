@@ -1,0 +1,6 @@
+framework module Distil_Protection {
+  umbrella header "Distil_Protection.h"
+
+  export *
+  module * { export * }
+}

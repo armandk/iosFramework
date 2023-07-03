@@ -1,0 +1,2769 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "ApolloAPI",
+        "printedName": "ApolloAPI",
+        "declKind": "Import",
+        "moduleName": "ApolloTestSupport"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Field",
+        "printedName": "Field",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Field",
+                "printedName": "ApolloTestSupport.Field<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:17ApolloTestSupport5FieldV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "StaticString",
+                "printedName": "Swift.StaticString",
+                "usr": "s:s12StaticStringV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17ApolloTestSupport5FieldVyACyxGs12StaticStringVcfc",
+            "mangledName": "$s17ApolloTestSupport5FieldVyACyxGs12StaticStringVcfc",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0>",
+            "sugared_genericSig": "<T>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "wrappedValue",
+            "printedName": "wrappedValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Field",
+                "printedName": "ApolloTestSupport.Field<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:17ApolloTestSupport5FieldV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport5FieldV12wrappedValueACyxGvp",
+            "mangledName": "$s17ApolloTestSupport5FieldV12wrappedValueACyxGvp",
+            "moduleName": "ApolloTestSupport",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Field",
+                    "printedName": "ApolloTestSupport.Field<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:17ApolloTestSupport5FieldV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport5FieldV12wrappedValueACyxGvg",
+                "mangledName": "$s17ApolloTestSupport5FieldV12wrappedValueACyxGvg",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Field",
+                    "printedName": "ApolloTestSupport.Field<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:17ApolloTestSupport5FieldV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport5FieldV12wrappedValueACyxGvs",
+                "mangledName": "$s17ApolloTestSupport5FieldV12wrappedValueACyxGvs",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport5FieldV12wrappedValueACyxGvM",
+                "mangledName": "$s17ApolloTestSupport5FieldV12wrappedValueACyxGvM",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0>",
+                "sugared_genericSig": "<T>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17ApolloTestSupport5FieldV",
+        "mangledName": "$s17ApolloTestSupport5FieldV",
+        "moduleName": "ApolloTestSupport",
+        "genericSig": "<τ_0_0>",
+        "sugared_genericSig": "<T>",
+        "declAttributes": [
+          "AccessControl",
+          "PropertyWrapper"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ApolloAPI",
+        "printedName": "ApolloAPI",
+        "declKind": "Import",
+        "moduleName": "ApolloTestSupport",
+        "declAttributes": [
+          "Exported"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "ApolloTestSupport"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Mock",
+        "printedName": "Mock",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "_data",
+            "printedName": "_data",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.AnyHashable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvp",
+            "mangledName": "$s17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvp",
+            "moduleName": "ApolloTestSupport",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.AnyHashable]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvg",
+                "mangledName": "$s17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvg",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.AnyHashable]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvs",
+                "mangledName": "$s17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvs",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvM",
+                "mangledName": "$s17ApolloTestSupport4MockC5_dataSDySSs11AnyHashableVGvM",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Mock",
+                "printedName": "ApolloTestSupport.Mock<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:17ApolloTestSupport4MockC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17ApolloTestSupport4MockCACyxGycfc",
+            "mangledName": "$s17ApolloTestSupport4MockCACyxGycfc",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+            "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "__typename",
+            "printedName": "__typename",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport4MockC10__typenameSSvp",
+            "mangledName": "$s17ApolloTestSupport4MockC10__typenameSSvp",
+            "moduleName": "ApolloTestSupport",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC10__typenameSSvg",
+                "mangledName": "$s17ApolloTestSupport4MockC10__typenameSSvg",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(dynamicMember:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "τ_1_0?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_1_0"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "KeyPath",
+                "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.MockFields"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Field",
+                    "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      }
+                    ],
+                    "usr": "s:17ApolloTestSupport5FieldV"
+                  }
+                ],
+                "usr": "s:s7KeyPathC"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luip",
+            "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luip",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloAPI.AnyScalarType, τ_1_0 : Swift.Hashable>",
+            "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloAPI.AnyScalarType, T : Swift.Hashable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "τ_1_0?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luig",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luig",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloAPI.AnyScalarType, τ_1_0 : Swift.Hashable>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloAPI.AnyScalarType, T : Swift.Hashable>",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "τ_1_0?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luis",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luis",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloAPI.AnyScalarType, τ_1_0 : Swift.Hashable>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloAPI.AnyScalarType, T : Swift.Hashable>",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luiM",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberqd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tc0A3API13AnyScalarTypeRd__SHRd__luiM",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloAPI.AnyScalarType, τ_1_0 : Swift.Hashable>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloAPI.AnyScalarType, T : Swift.Hashable>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(dynamicMember:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "τ_1_0.MockValueCollectionType.Element?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_1_0.MockValueCollectionType.Element"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "KeyPath",
+                "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.MockFields"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Field",
+                    "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      }
+                    ],
+                    "usr": "s:17ApolloTestSupport5FieldV"
+                  }
+                ],
+                "usr": "s:s7KeyPathC"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luip",
+            "mangledName": "$s17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luip",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+            "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "τ_1_0.MockValueCollectionType.Element?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_1_0.MockValueCollectionType.Element"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luig",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luig",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "τ_1_0.MockValueCollectionType.Element?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_1_0.MockValueCollectionType.Element"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luis",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luis",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<τ_1_0>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<τ_1_0>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luiM",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMember0D19ValueCollectionType_7ElementQYd__Sgs7KeyPathCy0D6FieldsQzAA5FieldVyqd__GG_tcAA0dnG0Rd__luiM",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Subscript",
+            "name": "subscript",
+            "printedName": "subscript(dynamicMember:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[τ_1_0.MockValueCollectionType.Element]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[τ_1_0.MockValueCollectionType.Element]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_1_0.MockValueCollectionType.Element"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "KeyPath",
+                "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<[τ_1_0]>>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.MockFields"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Field",
+                    "printedName": "ApolloTestSupport.Field<[τ_1_0]>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[τ_1_0]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_1_0"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:17ApolloTestSupport5FieldV"
+                  }
+                ],
+                "usr": "s:s7KeyPathC"
+              }
+            ],
+            "declKind": "Subscript",
+            "usr": "s:17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luip",
+            "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luip",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+            "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[τ_1_0.MockValueCollectionType.Element]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[τ_1_0.MockValueCollectionType.Element]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DependentMember",
+                            "printedName": "τ_1_0.MockValueCollectionType.Element"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<[τ_1_0]>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<[τ_1_0]>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[τ_1_0]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "GenericTypeParam",
+                                "printedName": "τ_1_0"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luig",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luig",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[τ_1_0.MockValueCollectionType.Element]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[τ_1_0.MockValueCollectionType.Element]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DependentMember",
+                            "printedName": "τ_1_0.MockValueCollectionType.Element"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<[τ_1_0]>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<[τ_1_0]>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[τ_1_0]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "GenericTypeParam",
+                                "printedName": "τ_1_0"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luis",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luis",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KeyPath",
+                    "printedName": "Swift.KeyPath<τ_0_0.MockFields, ApolloTestSupport.Field<[τ_1_0]>>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockFields"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Field",
+                        "printedName": "ApolloTestSupport.Field<[τ_1_0]>",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[τ_1_0]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "GenericTypeParam",
+                                "printedName": "τ_1_0"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:17ApolloTestSupport5FieldV"
+                      }
+                    ],
+                    "usr": "s:s7KeyPathC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luiM",
+                "mangledName": "$s17ApolloTestSupport4MockC13dynamicMemberSay0D19ValueCollectionType_7ElementQYd__GSgs7KeyPathCy0D6FieldsQzAA5FieldVySayqd__GGG_tcAA0dnG0Rd__luiM",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : ApolloTestSupport.MockObject, τ_1_0 : ApolloTestSupport.MockFieldValue>",
+                "sugared_genericSig": "<O, T where O : ApolloTestSupport.MockObject, T : ApolloTestSupport.MockFieldValue>",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "_selectionSetMockData",
+            "printedName": "_selectionSetMockData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.AnyHashable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport4MockC013_selectionSetD4DataSDySSs11AnyHashableVGvp",
+            "mangledName": "$s17ApolloTestSupport4MockC013_selectionSetD4DataSDySSs11AnyHashableVGvp",
+            "moduleName": "ApolloTestSupport",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.AnyHashable]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC013_selectionSetD4DataSDySSs11AnyHashableVGvg",
+                "mangledName": "$s17ApolloTestSupport4MockC013_selectionSetD4DataSDySSs11AnyHashableVGvg",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Mock",
+                "printedName": "ApolloTestSupport.Mock<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:17ApolloTestSupport4MockC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Mock",
+                "printedName": "ApolloTestSupport.Mock<τ_0_0>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ],
+                "usr": "s:17ApolloTestSupport4MockC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17ApolloTestSupport4MockC2eeoiySbACyxG_AEtFZ",
+            "mangledName": "$s17ApolloTestSupport4MockC2eeoiySbACyxG_AEtFZ",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+            "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17ApolloTestSupport4MockC4hash4intoys6HasherVz_tF",
+            "mangledName": "$s17ApolloTestSupport4MockC4hash4intoys6HasherVz_tF",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+            "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport4MockC9hashValueSivp",
+            "mangledName": "$s17ApolloTestSupport4MockC9hashValueSivp",
+            "moduleName": "ApolloTestSupport",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport4MockC9hashValueSivg",
+                "mangledName": "$s17ApolloTestSupport4MockC9hashValueSivg",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17ApolloTestSupport4MockC",
+        "mangledName": "$s17ApolloTestSupport4MockC",
+        "moduleName": "ApolloTestSupport",
+        "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+        "sugared_genericSig": "<O where O : ApolloTestSupport.MockObject>",
+        "declAttributes": [
+          "AccessControl",
+          "DynamicMemberLookup"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "AnyMock",
+            "printedName": "AnyMock",
+            "usr": "s:17ApolloTestSupport7AnyMockP",
+            "mangledName": "$s17ApolloTestSupport7AnyMockP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AnyMock",
+        "printedName": "AnyMock",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "_selectionSetMockData",
+            "printedName": "_selectionSetMockData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.AnyHashable]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport7AnyMockP013_selectionSetE4DataSDySSs0D8HashableVGvp",
+            "mangledName": "$s17ApolloTestSupport7AnyMockP013_selectionSetE4DataSDySSs0D8HashableVGvp",
+            "moduleName": "ApolloTestSupport",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.AnyHashable]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport7AnyMockP013_selectionSetE4DataSDySSs0D8HashableVGvg",
+                "mangledName": "$s17ApolloTestSupport7AnyMockP013_selectionSetE4DataSDySSs0D8HashableVGvg",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.AnyMock>",
+                "sugared_genericSig": "<Self where Self : ApolloTestSupport.AnyMock>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17ApolloTestSupport7AnyMockP",
+        "mangledName": "$s17ApolloTestSupport7AnyMockP",
+        "moduleName": "ApolloTestSupport",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MockObject",
+        "printedName": "MockObject",
+        "children": [
+          {
+            "kind": "AssociatedType",
+            "name": "MockFields",
+            "printedName": "MockFields",
+            "declKind": "AssociatedType",
+            "usr": "s:17ApolloTestSupport10MockObjectP0D6FieldsQa",
+            "mangledName": "$s17ApolloTestSupport10MockObjectP0D6FieldsQa",
+            "moduleName": "ApolloTestSupport",
+            "protocolReq": true
+          },
+          {
+            "kind": "AssociatedType",
+            "name": "MockValueCollectionType",
+            "printedName": "MockValueCollectionType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[ApolloTestSupport.Mock<τ_0_0>]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Mock",
+                    "printedName": "ApolloTestSupport.Mock<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:17ApolloTestSupport4MockC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "AssociatedType",
+            "usr": "s:17ApolloTestSupport10MockObjectP0D19ValueCollectionTypeQa",
+            "mangledName": "$s17ApolloTestSupport10MockObjectP0D19ValueCollectionTypeQa",
+            "moduleName": "ApolloTestSupport",
+            "protocolReq": true,
+            "overriding": true
+          },
+          {
+            "kind": "Var",
+            "name": "objectType",
+            "printedName": "objectType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Object",
+                "printedName": "ApolloAPI.Object",
+                "usr": "s:9ApolloAPI6ObjectV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport10MockObjectP10objectType0A3API0E0VvpZ",
+            "mangledName": "$s17ApolloTestSupport10MockObjectP10objectType0A3API0E0VvpZ",
+            "moduleName": "ApolloTestSupport",
+            "static": true,
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Object",
+                    "printedName": "ApolloAPI.Object",
+                    "usr": "s:9ApolloAPI6ObjectV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport10MockObjectP10objectType0A3API0E0VvgZ",
+                "mangledName": "$s17ApolloTestSupport10MockObjectP10objectType0A3API0E0VvgZ",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<Self where Self : ApolloTestSupport.MockObject>",
+                "static": true,
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "_mockFields",
+            "printedName": "_mockFields",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DependentMember",
+                "printedName": "τ_0_0.MockFields"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17ApolloTestSupport10MockObjectP11_mockFields0dG0QzvpZ",
+            "mangledName": "$s17ApolloTestSupport10MockObjectP11_mockFields0dG0QzvpZ",
+            "moduleName": "ApolloTestSupport",
+            "static": true,
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.MockFields"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17ApolloTestSupport10MockObjectP11_mockFields0dG0QzvgZ",
+                "mangledName": "$s17ApolloTestSupport10MockObjectP11_mockFields0dG0QzvgZ",
+                "moduleName": "ApolloTestSupport",
+                "genericSig": "<τ_0_0 where τ_0_0 : ApolloTestSupport.MockObject>",
+                "sugared_genericSig": "<Self where Self : ApolloTestSupport.MockObject>",
+                "static": true,
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17ApolloTestSupport10MockObjectP",
+        "mangledName": "$s17ApolloTestSupport10MockObjectP",
+        "moduleName": "ApolloTestSupport",
+        "genericSig": "<τ_0_0 : ApolloTestSupport.MockFieldValue>",
+        "sugared_genericSig": "<Self : ApolloTestSupport.MockFieldValue>",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "MockFieldValue",
+            "printedName": "MockFieldValue",
+            "usr": "s:17ApolloTestSupport14MockFieldValueP",
+            "mangledName": "$s17ApolloTestSupport14MockFieldValueP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MockFieldValue",
+        "printedName": "MockFieldValue",
+        "children": [
+          {
+            "kind": "AssociatedType",
+            "name": "MockValueCollectionType",
+            "printedName": "MockValueCollectionType",
+            "declKind": "AssociatedType",
+            "usr": "s:17ApolloTestSupport14MockFieldValueP0dF14CollectionTypeQa",
+            "mangledName": "$s17ApolloTestSupport14MockFieldValueP0dF14CollectionTypeQa",
+            "moduleName": "ApolloTestSupport",
+            "protocolReq": true
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17ApolloTestSupport14MockFieldValueP",
+        "mangledName": "$s17ApolloTestSupport14MockFieldValueP",
+        "moduleName": "ApolloTestSupport",
+        "genericSig": "<τ_0_0.MockValueCollectionType : Swift.Collection>",
+        "sugared_genericSig": "<Self.MockValueCollectionType : Swift.Collection>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SelectionSet",
+        "printedName": "SelectionSet",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "from",
+            "printedName": "from(_:withVariables:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AnyMock",
+                "printedName": "ApolloTestSupport.AnyMock",
+                "usr": "s:17ApolloTestSupport7AnyMockP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : ApolloAPI.GraphQLOperationVariableValue]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : ApolloAPI.GraphQLOperationVariableValue]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GraphQLOperationVariableValue",
+                        "printedName": "ApolloAPI.GraphQLOperationVariableValue",
+                        "usr": "s:9ApolloAPI29GraphQLOperationVariableValueP"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9ApolloAPI12SelectionSetP0A11TestSupportE4from_13withVariablesxAD7AnyMock_p_SDySSAA29GraphQLOperationVariableValue_pGSgtFZ",
+            "mangledName": "$s9ApolloAPI12SelectionSetP0A11TestSupportE4from_13withVariablesxAD7AnyMock_p_SDySSAA29GraphQLOperationVariableValue_pGSgtFZ",
+            "moduleName": "ApolloTestSupport",
+            "genericSig": "<τ_0_0 where τ_0_0 : ApolloAPI.SelectionSet>",
+            "sugared_genericSig": "<Self where Self : ApolloAPI.SelectionSet>",
+            "static": true,
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:9ApolloAPI12SelectionSetP",
+        "mangledName": "$s9ApolloAPI12SelectionSetP",
+        "moduleName": "ApolloAPI",
+        "genericSig": "<τ_0_0 : ApolloAPI.AnySelectionSet, τ_0_0 : Swift.Hashable, τ_0_0.Schema : ApolloAPI.SchemaMetadata>",
+        "sugared_genericSig": "<Self : ApolloAPI.AnySelectionSet, Self : Swift.Hashable, Self.Schema : ApolloAPI.SchemaMetadata>",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "AnySelectionSet",
+            "printedName": "AnySelectionSet",
+            "usr": "s:9ApolloAPI15AnySelectionSetP",
+            "mangledName": "$s9ApolloAPI15AnySelectionSetP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SelectionSetEntityValue",
+            "printedName": "SelectionSetEntityValue",
+            "usr": "s:9ApolloAPI23SelectionSetEntityValueP",
+            "mangledName": "$s9ApolloAPI23SelectionSetEntityValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Interface",
+        "printedName": "Interface",
+        "declKind": "Struct",
+        "usr": "s:9ApolloAPI9InterfaceV",
+        "mangledName": "$s9ApolloAPI9InterfaceV",
+        "moduleName": "ApolloAPI",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MockFieldValue",
+            "printedName": "MockFieldValue",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "MockValueCollectionType",
+                "printedName": "MockValueCollectionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ApolloTestSupport.AnyMock]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyMock",
+                        "printedName": "ApolloTestSupport.AnyMock",
+                        "usr": "s:17ApolloTestSupport7AnyMockP"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17ApolloTestSupport14MockFieldValueP",
+            "mangledName": "$s17ApolloTestSupport14MockFieldValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ParentType",
+            "printedName": "ParentType",
+            "usr": "s:9ApolloAPI10ParentTypeP",
+            "mangledName": "$s9ApolloAPI10ParentTypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Union",
+        "printedName": "Union",
+        "declKind": "Struct",
+        "usr": "s:9ApolloAPI5UnionV",
+        "mangledName": "$s9ApolloAPI5UnionV",
+        "moduleName": "ApolloAPI",
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MockFieldValue",
+            "printedName": "MockFieldValue",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "MockValueCollectionType",
+                "printedName": "MockValueCollectionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[ApolloTestSupport.AnyMock]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyMock",
+                        "printedName": "ApolloTestSupport.AnyMock",
+                        "usr": "s:17ApolloTestSupport7AnyMockP"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17ApolloTestSupport14MockFieldValueP",
+            "mangledName": "$s17ApolloTestSupport14MockFieldValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ParentType",
+            "printedName": "ParentType",
+            "usr": "s:9ApolloAPI10ParentTypeP",
+            "mangledName": "$s9ApolloAPI10ParentTypeP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Optional",
+        "printedName": "Optional",
+        "declKind": "Enum",
+        "usr": "s:Sq",
+        "mangledName": "$sSq",
+        "moduleName": "Swift",
+        "genericSig": "<τ_0_0>",
+        "sugared_genericSig": "<Wrapped>",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "isEnumExhaustive": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByNilLiteral",
+            "printedName": "ExpressibleByNilLiteral",
+            "usr": "s:s23ExpressibleByNilLiteralP",
+            "mangledName": "$ss23ExpressibleByNilLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MockFieldValue",
+            "printedName": "MockFieldValue",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "MockValueCollectionType",
+                "printedName": "MockValueCollectionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[τ_0_0.MockValueCollectionType.Element?]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "τ_0_0.MockValueCollectionType.Element?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "DependentMember",
+                            "printedName": "τ_0_0.MockValueCollectionType.Element"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17ApolloTestSupport14MockFieldValueP",
+            "mangledName": "$s17ApolloTestSupport14MockFieldValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "AnyObject"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "EncodableWithConfiguration",
+            "printedName": "EncodableWithConfiguration",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "EncodingConfiguration",
+                "printedName": "EncodingConfiguration",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.EncodingConfiguration"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation26EncodableWithConfigurationP",
+            "mangledName": "$s10Foundation26EncodableWithConfigurationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DecodableWithConfiguration",
+            "printedName": "DecodableWithConfiguration",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "DecodingConfiguration",
+                "printedName": "DecodingConfiguration",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.DecodingConfiguration"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation26DecodableWithConfigurationP",
+            "mangledName": "$s10Foundation26DecodableWithConfigurationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "GraphQLOperationVariableValue",
+            "printedName": "GraphQLOperationVariableValue",
+            "usr": "s:9ApolloAPI29GraphQLOperationVariableValueP",
+            "mangledName": "$s9ApolloAPI29GraphQLOperationVariableValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AnyScalarType",
+            "printedName": "AnyScalarType",
+            "usr": "s:9ApolloAPI13AnyScalarTypeP",
+            "mangledName": "$s9ApolloAPI13AnyScalarTypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AnyHashableConvertible",
+            "printedName": "AnyHashableConvertible",
+            "usr": "s:9ApolloAPI22AnyHashableConvertibleP",
+            "mangledName": "$s9ApolloAPI22AnyHashableConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "OutputTypeConvertible",
+            "printedName": "OutputTypeConvertible",
+            "usr": "s:9ApolloAPI21OutputTypeConvertibleP",
+            "mangledName": "$s9ApolloAPI21OutputTypeConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SelectionSetEntityValue",
+            "printedName": "SelectionSetEntityValue",
+            "usr": "s:9ApolloAPI23SelectionSetEntityValueP",
+            "mangledName": "$s9ApolloAPI23SelectionSetEntityValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "JSONEncodable",
+            "printedName": "JSONEncodable",
+            "usr": "s:9ApolloAPI13JSONEncodableP",
+            "mangledName": "$s9ApolloAPI13JSONEncodableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Array",
+        "printedName": "Array",
+        "declKind": "Struct",
+        "usr": "s:Sa",
+        "mangledName": "$sSa",
+        "moduleName": "Swift",
+        "genericSig": "<τ_0_0>",
+        "sugared_genericSig": "<Element>",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_DestructorSafeContainer",
+            "printedName": "_DestructorSafeContainer",
+            "usr": "s:s24_DestructorSafeContainerP",
+            "mangledName": "$ss24_DestructorSafeContainerP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MockFieldValue",
+            "printedName": "MockFieldValue",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "MockValueCollectionType",
+                "printedName": "MockValueCollectionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[τ_0_0.MockValueCollectionType]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "DependentMember",
+                        "printedName": "τ_0_0.MockValueCollectionType"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17ApolloTestSupport14MockFieldValueP",
+            "mangledName": "$s17ApolloTestSupport14MockFieldValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ArrayProtocol",
+            "printedName": "_ArrayProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_Buffer",
+                "printedName": "_Buffer",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "_ArrayBuffer",
+                    "printedName": "Swift._ArrayBuffer<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:s12_ArrayBufferV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s14_ArrayProtocolP",
+            "mangledName": "$ss14_ArrayProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RandomAccessCollection",
+            "printedName": "RandomAccessCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ArraySlice",
+                    "printedName": "Swift.ArraySlice<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:s10ArraySliceV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sk",
+            "mangledName": "$sSk"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MutableCollection",
+            "printedName": "MutableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ArraySlice",
+                    "printedName": "Swift.ArraySlice<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:s10ArraySliceV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SM",
+            "mangledName": "$sSM"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ArraySlice",
+                    "printedName": "Swift.ArraySlice<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:s10ArraySliceV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IndexingIterator",
+                    "printedName": "Swift.IndexingIterator<[τ_0_0]>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[τ_0_0]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_0_0"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:s16IndexingIteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ArraySlice",
+                    "printedName": "Swift.ArraySlice<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:s10ArraySliceV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Range",
+                    "printedName": "Swift.Range<Swift.Int>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sn"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IndexingIterator",
+                    "printedName": "Swift.IndexingIterator<[τ_0_0]>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[τ_0_0]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "GenericTypeParam",
+                            "printedName": "τ_0_0"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:s16IndexingIteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByArrayLiteral",
+            "printedName": "ExpressibleByArrayLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ArrayLiteralElement",
+                "printedName": "ArrayLiteralElement",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s25ExpressibleByArrayLiteralP",
+            "mangledName": "$ss25ExpressibleByArrayLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ArraySlice",
+                    "printedName": "Swift.ArraySlice<τ_0_0>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      }
+                    ],
+                    "usr": "s:s10ArraySliceV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasCustomAnyHashableRepresentation",
+            "printedName": "_HasCustomAnyHashableRepresentation",
+            "usr": "s:s35_HasCustomAnyHashableRepresentationP",
+            "mangledName": "$ss35_HasCustomAnyHashableRepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasContiguousBytes",
+            "printedName": "_HasContiguousBytes",
+            "usr": "s:s19_HasContiguousBytesP",
+            "mangledName": "$ss19_HasContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DataProtocol",
+            "printedName": "DataProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Regions",
+                "printedName": "Regions",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CollectionOfOne",
+                    "printedName": "Swift.CollectionOfOne<[Swift.UInt8]>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.UInt8]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt8",
+                            "printedName": "Swift.UInt8",
+                            "usr": "s:s5UInt8V"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:s15CollectionOfOneV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation12DataProtocolP",
+            "mangledName": "$s10Foundation12DataProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MutableDataProtocol",
+            "printedName": "MutableDataProtocol",
+            "usr": "s:10Foundation19MutableDataProtocolP",
+            "mangledName": "$s10Foundation19MutableDataProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "EncodableWithConfiguration",
+            "printedName": "EncodableWithConfiguration",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "EncodingConfiguration",
+                "printedName": "EncodingConfiguration",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.EncodingConfiguration"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation26EncodableWithConfigurationP",
+            "mangledName": "$s10Foundation26EncodableWithConfigurationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "DecodableWithConfiguration",
+            "printedName": "DecodableWithConfiguration",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "DecodingConfiguration",
+                "printedName": "DecodingConfiguration",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.DecodingConfiguration"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation26DecodableWithConfigurationP",
+            "mangledName": "$s10Foundation26DecodableWithConfigurationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSArray",
+                    "printedName": "Foundation.NSArray",
+                    "usr": "c:objc(cs)NSArray"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ContiguousBytes",
+            "printedName": "ContiguousBytes",
+            "usr": "s:10Foundation15ContiguousBytesP",
+            "mangledName": "$s10Foundation15ContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "GraphQLOperationVariableValue",
+            "printedName": "GraphQLOperationVariableValue",
+            "usr": "s:9ApolloAPI29GraphQLOperationVariableValueP",
+            "mangledName": "$s9ApolloAPI29GraphQLOperationVariableValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AnyScalarType",
+            "printedName": "AnyScalarType",
+            "usr": "s:9ApolloAPI13AnyScalarTypeP",
+            "mangledName": "$s9ApolloAPI13AnyScalarTypeP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AnyHashableConvertible",
+            "printedName": "AnyHashableConvertible",
+            "usr": "s:9ApolloAPI22AnyHashableConvertibleP",
+            "mangledName": "$s9ApolloAPI22AnyHashableConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_InitializableByArrayLiteralElements",
+            "printedName": "_InitializableByArrayLiteralElements",
+            "usr": "s:9ApolloAPI36_InitializableByArrayLiteralElementsP",
+            "mangledName": "$s9ApolloAPI36_InitializableByArrayLiteralElementsP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "OutputTypeConvertible",
+            "printedName": "OutputTypeConvertible",
+            "usr": "s:9ApolloAPI21OutputTypeConvertibleP",
+            "mangledName": "$s9ApolloAPI21OutputTypeConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SelectionSetEntityValue",
+            "printedName": "SelectionSetEntityValue",
+            "usr": "s:9ApolloAPI23SelectionSetEntityValueP",
+            "mangledName": "$s9ApolloAPI23SelectionSetEntityValueP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "JSONEncodable",
+            "printedName": "JSONEncodable",
+            "usr": "s:9ApolloAPI13JSONEncodableP",
+            "mangledName": "$s9ApolloAPI13JSONEncodableP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

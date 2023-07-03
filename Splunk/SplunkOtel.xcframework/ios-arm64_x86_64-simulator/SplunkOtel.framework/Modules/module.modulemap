@@ -1,0 +1,4 @@
+framework module SplunkOtel {
+  header "SplunkOtel-Swift.h"
+  requires objc
+}

@@ -1,0 +1,1720 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SplunkOtel
+import CoreTelephony
+import Darwin
+import Foundation
+import Network
+import QuartzCore
+import SQLite3
+import Swift
+import SystemConfiguration
+import UIKit
+import WebKit
+import _Concurrency
+import os.activity
+import os
+public class ZipkinTraceExporter : SplunkOtel.SpanExporter {
+  public var options: SplunkOtel.ZipkinTraceExporterOptions
+  public init(options: SplunkOtel.ZipkinTraceExporterOptions)
+  public func export(spans: [SplunkOtel.SpanData]) -> SplunkOtel.SpanExporterResultCode
+  public func flush() -> SplunkOtel.SpanExporterResultCode
+  public func shutdown()
+  @objc deinit
+}
+public struct EnvVarResource {
+  public static let resource: SplunkOtel.Resource
+  public static func get(environment: [Swift.String : Swift.String] = ProcessInfo.processInfo.environment) -> SplunkOtel.Resource
+}
+public protocol ReadableSpan : SplunkOtel.Span {
+  var name: Swift.String { get set }
+  var instrumentationScopeInfo: SplunkOtel.InstrumentationScopeInfo { get }
+  func toSpanData() -> SplunkOtel.SpanData
+  var hasEnded: Swift.Bool { get }
+  var latency: Foundation.TimeInterval { get }
+}
+public class TracerProviderSdk : SplunkOtel.TracerProvider {
+  public init(clock: SplunkOtel.Clock = MillisClock(), idGenerator: SplunkOtel.IdGenerator = RandomIdGenerator(), resource: SplunkOtel.Resource = EnvVarResource.get(), spanLimits: SplunkOtel.SpanLimits = SpanLimits(), sampler: SplunkOtel.Sampler = Samplers.parentBased(root: Samplers.alwaysOn), spanProcessors: [SplunkOtel.SpanProcessor] = [])
+  @objc deinit
+  public func get(instrumentationName: Swift.String, instrumentationVersion: Swift.String? = nil) -> SplunkOtel.Tracer
+  public func getActiveClock() -> SplunkOtel.Clock
+  public func updateActiveClock(_ newClock: SplunkOtel.Clock)
+  public func getActiveIdGenerator() -> SplunkOtel.IdGenerator
+  public func updateActiveIdGenerator(_ newGenerator: SplunkOtel.IdGenerator)
+  public func getActiveResource() -> SplunkOtel.Resource
+  public func updateActiveResource(_ newResource: SplunkOtel.Resource)
+  public func getActiveSpanLimits() -> SplunkOtel.SpanLimits
+  public func updateActiveSpanLimits(_ spanLimits: SplunkOtel.SpanLimits)
+  public func getActiveSampler() -> SplunkOtel.Sampler
+  public func updateActiveSampler(_ newSampler: SplunkOtel.Sampler)
+  public func getActiveSpanProcessors() -> [SplunkOtel.SpanProcessor]
+  public func addSpanProcessor(_ spanProcessor: SplunkOtel.SpanProcessor)
+  public func resetSpanProcessors()
+  public func shutdown()
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+}
+public enum ResourceAttributes : Swift.String {
+  case cloudProvider
+  case cloudAccountId
+  case cloudRegion
+  case cloudAvailabilityZone
+  case cloudPlatform
+  case awsEcsContainerArn
+  case awsEcsClusterArn
+  case awsEcsLaunchtype
+  case awsEcsTaskArn
+  case awsEcsTaskFamily
+  case awsEcsTaskRevision
+  case awsEksClusterArn
+  case awsLogGroupNames
+  case awsLogGroupArns
+  case awsLogStreamNames
+  case awsLogStreamArns
+  case containerName
+  case containerId
+  case containerRuntime
+  case containerImageName
+  case containerImageTag
+  case deploymentEnvironment
+  case deviceId
+  case deviceModelIdentifier
+  case deviceModelName
+  case faasName
+  case faasId
+  case faasVersion
+  case faasInstance
+  case faasMaxMemory
+  case hostId
+  case hostName
+  case hostType
+  case hostArch
+  case hostImageName
+  case hostImageId
+  case hostImageVersion
+  case k8sClusterName
+  case k8sNodeName
+  case k8sNodeUid
+  case k8sNamespaceName
+  case k8sPodUid
+  case k8sPodName
+  case k8sContainerName
+  case k8sReplicasetUid
+  case k8sReplicasetName
+  case k8sDeploymentUid
+  case k8sDeploymentName
+  case k8sStatefulsetUid
+  case k8sStatefulsetName
+  case k8sDaemonsetUid
+  case k8sDaemonsetName
+  case k8sJobUid
+  case k8sJobName
+  case k8sCronjobUid
+  case k8sCronjobName
+  case osType
+  case osDescription
+  case osName
+  case osVersion
+  case processPid
+  case processExecutableName
+  case processExecutablePath
+  case processCommand
+  case processCommandLine
+  case processCommandArgs
+  case processOwner
+  case processRuntimeName
+  case processRuntimeVersion
+  case processRuntimeDescription
+  case serviceName
+  case serviceNamespace
+  case serviceInstanceId
+  case serviceVersion
+  case telemetrySdkName
+  case telemetrySdkLanguage
+  case telemetrySdkVersion
+  case telemetryAutoVersion
+  case webengineName
+  case webengineVersion
+  case webengineDescription
+  public struct CloudProviderValues : Swift.CustomStringConvertible {
+    public static let alibabaCloud: SplunkOtel.ResourceAttributes.CloudProviderValues
+    public static let aws: SplunkOtel.ResourceAttributes.CloudProviderValues
+    public static let azure: SplunkOtel.ResourceAttributes.CloudProviderValues
+    public static let gcp: SplunkOtel.ResourceAttributes.CloudProviderValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct CloudPlatformValues : Swift.CustomStringConvertible {
+    public static let alibabaCloudEcs: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let alibabaCloudFc: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let awsEc2: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let awsEcs: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let awsEks: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let awsLambda: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let awsElasticBeanstalk: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let azureVm: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let azureContainerInstances: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let azureAks: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let azureFunctions: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let azureAppService: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let gcpComputeEngine: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let gcpCloudRun: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let gcpKubernetesEngine: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let gcpCloudFunctions: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public static let gcpAppEngine: SplunkOtel.ResourceAttributes.CloudPlatformValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum AwsEcsLaunchtypeValues : Swift.String {
+    case ec2
+    case fargate
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct HostArchValues : Swift.CustomStringConvertible {
+    public static let amd64: SplunkOtel.ResourceAttributes.HostArchValues
+    public static let arm32: SplunkOtel.ResourceAttributes.HostArchValues
+    public static let arm64: SplunkOtel.ResourceAttributes.HostArchValues
+    public static let ia64: SplunkOtel.ResourceAttributes.HostArchValues
+    public static let ppc32: SplunkOtel.ResourceAttributes.HostArchValues
+    public static let ppc64: SplunkOtel.ResourceAttributes.HostArchValues
+    public static let x86: SplunkOtel.ResourceAttributes.HostArchValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct OsTypeValues : Swift.CustomStringConvertible {
+    public static let windows: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let linux: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let darwin: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let freebsd: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let netbsd: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let openbsd: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let dragonflybsd: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let hpux: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let aix: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let solaris: SplunkOtel.ResourceAttributes.OsTypeValues
+    public static let zOs: SplunkOtel.ResourceAttributes.OsTypeValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct TelemetrySdkLanguageValues : Swift.CustomStringConvertible {
+    public static let cpp: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let dotnet: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let erlang: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let go: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let java: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let nodejs: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let php: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let python: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let ruby: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let webjs: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let swift: SplunkOtel.ResourceAttributes.TelemetrySdkLanguageValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public func == (left: SplunkOtel.ResourceAttributes, right: Swift.String) -> Swift.Bool
+public func == (left: Swift.String, right: SplunkOtel.ResourceAttributes) -> Swift.Bool
+public struct EnvironmentContextPropagator : SplunkOtel.TextMapPropagator {
+  public let fields: Swift.Set<Swift.String>
+  public init()
+  public func inject<S>(spanContext: SplunkOtel.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.SpanContext? where G : SplunkOtel.Getter
+}
+public protocol Clock : AnyObject {
+  var now: Foundation.Date { get }
+}
+extension SplunkOtel.Clock {
+  public var nanoTime: Swift.UInt64 {
+    get
+  }
+}
+public func == (lhs: SplunkOtel.Clock, rhs: SplunkOtel.Clock) -> Swift.Bool
+public enum AttributeValue : Swift.Equatable, Swift.CustomStringConvertible, Swift.Hashable {
+  case string(Swift.String)
+  case bool(Swift.Bool)
+  case int(Swift.Int)
+  case double(Swift.Double)
+  case stringArray([Swift.String])
+  case boolArray([Swift.Bool])
+  case intArray([Swift.Int])
+  case doubleArray([Swift.Double])
+  public var description: Swift.String {
+    get
+  }
+  public init?(_ value: Any)
+  public static func == (a: SplunkOtel.AttributeValue, b: SplunkOtel.AttributeValue) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension SplunkOtel.AttributeValue : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class DefaultTracerProvider : SplunkOtel.TracerProvider {
+  public static let instance: SplunkOtel.DefaultTracerProvider
+  public func get(instrumentationName: Swift.String, instrumentationVersion: Swift.String? = nil) -> SplunkOtel.Tracer
+  @objc deinit
+}
+public struct TraceId : Swift.Comparable, Swift.Hashable, Swift.CustomStringConvertible, Swift.Equatable, Swift.Codable {
+  public static let size: Swift.Int
+  public static let invalidId: Swift.UInt64
+  public static let invalid: SplunkOtel.TraceId
+  public var idHi: Swift.UInt64 {
+    get
+  }
+  public var idLo: Swift.UInt64 {
+    get
+  }
+  public init(idHi: Swift.UInt64, idLo: Swift.UInt64)
+  public init()
+  public static func random() -> SplunkOtel.TraceId
+  public init(fromData data: Foundation.Data)
+  public init(fromBytes bytes: [Swift.UInt8])
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.UInt8>)
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.Character>)
+  public func copyBytesTo(dest: inout Foundation.Data, destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout [Swift.UInt8], destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout Swift.ArraySlice<Swift.UInt8>, destOffset: Swift.Int)
+  public init(fromHexString hex: Swift.String, withOffset offset: Swift.Int = 0)
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var hexString: Swift.String {
+    get
+  }
+  public var rawHigherLong: Swift.UInt64 {
+    get
+  }
+  public var rawLowerLong: Swift.UInt64 {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public static func < (lhs: SplunkOtel.TraceId, rhs: SplunkOtel.TraceId) -> Swift.Bool
+  public static func == (lhs: SplunkOtel.TraceId, rhs: SplunkOtel.TraceId) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct MultiSpanProcessor : SplunkOtel.SpanProcessor {
+  public init(spanProcessors: [SplunkOtel.SpanProcessor])
+  public var isStartRequired: Swift.Bool {
+    get
+  }
+  public var isEndRequired: Swift.Bool {
+    get
+  }
+  public func onStart(parentContext: SplunkOtel.SpanContext?, span: SplunkOtel.ReadableSpan)
+  public func onEnd(span: SplunkOtel.ReadableSpan)
+  public func shutdown()
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+}
+public let DEFAULT_DISK_CACHE_MAX_SIZE_BYTES: Swift.Int64
+@_inheritsConvenienceInitializers @objc public class SplunkRumOptions : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc public init(allowInsecureBeacon: Swift.Bool = false, debug: Swift.Bool = false, globalAttributes: [Swift.String : Any] = [:], environment: Swift.String? = nil, ignoreURLs: Foundation.NSRegularExpression? = nil, screenNameSpans: Swift.Bool = true, networkInstrumentation: Swift.Bool = true, enableDiskCache: Swift.Bool = false, spanDiskCacheMaxSize: Swift.Int64 = DEFAULT_DISK_CACHE_MAX_SIZE_BYTES, slowFrameDetectionThresholdMs: Swift.Double = 16.7, frozenFrameDetectionThresholdMs: Swift.Double = 700, sessionSamplingRatio: Swift.Double = 1.0)
+  @objc public init(opts: SplunkOtel.SplunkRumOptions)
+  @objc public var allowInsecureBeacon: Swift.Bool
+  @objc public var debug: Swift.Bool
+  @objc public var globalAttributes: [Swift.String : Any]
+  @objc public var environment: Swift.String?
+  @objc public var ignoreURLs: Foundation.NSRegularExpression?
+  public var spanFilter: ((SplunkOtel.SpanData) -> SplunkOtel.SpanData?)?
+  @objc public var showVCInstrumentation: Swift.Bool
+  @objc public var screenNameSpans: Swift.Bool
+  @objc public var networkInstrumentation: Swift.Bool
+  @objc public var slowFrameDetectionThresholdMs: Swift.Double
+  @objc public var frozenFrameDetectionThresholdMs: Swift.Double
+  @objc public var enableDiskCache: Swift.Bool
+  @objc public var spanDiskCacheMaxSize: Swift.Int64
+  @objc public var sessionSamplingRatio: Swift.Double
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class SplunkRum : ObjectiveC.NSObject {
+  @discardableResult
+  @objc public class func initialize(beaconUrl: Swift.String, rumAuth: Swift.String, options: SplunkOtel.SplunkRumOptions? = nil) -> Swift.Bool
+  @objc public class func getSessionId() -> Swift.String
+  public class func addSessionIdChangeCallback(_ callback: @escaping (() -> Swift.Void))
+  public class func addScreenNameChangeCallback(_ callback: @escaping ((Swift.String) -> Swift.Void))
+  @objc public class func reportError(string: Swift.String)
+  @objc public class func reportError(exception: Foundation.NSException)
+  @objc public class func reportError(error: Swift.Error)
+  @objc public class func setGlobalAttributes(_ attributes: [Swift.String : Any])
+  @objc public class func removeGlobalAttribute(_ key: Swift.String)
+  @objc public class func setScreenName(_ name: Swift.String)
+  public class func debugLog(_ msg: Swift.String)
+  @objc public class func integrateWithBrowserRum(_ view: WebKit.WKWebView)
+  @objc public class func isInitialized() -> Swift.Bool
+  @objc public class func setLocation(latitude: Swift.Double, longitude: Swift.Double)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct W3CBaggagePropagator : SplunkOtel.TextMapBaggagePropagator {
+  public init()
+  public let fields: Swift.Set<Swift.String>
+  public func inject<S>(baggage: SplunkOtel.Baggage, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.Baggage? where G : SplunkOtel.Getter
+}
+public struct SpanData : Swift.Equatable, Swift.Codable {
+  public var traceId: SplunkOtel.TraceId {
+    get
+  }
+  public var spanId: SplunkOtel.SpanId {
+    get
+  }
+  public var traceFlags: SplunkOtel.TraceFlags {
+    get
+  }
+  public var traceState: SplunkOtel.TraceState {
+    get
+  }
+  public var parentSpanId: SplunkOtel.SpanId? {
+    get
+  }
+  public var resource: SplunkOtel.Resource {
+    get
+  }
+  public var instrumentationScope: SplunkOtel.InstrumentationScopeInfo {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var kind: SplunkOtel.SpanKind {
+    get
+  }
+  public var startTime: Foundation.Date {
+    get
+  }
+  public var attributes: [Swift.String : SplunkOtel.AttributeValue] {
+    get
+  }
+  public var events: [SplunkOtel.SpanData.Event] {
+    get
+  }
+  public var links: [SplunkOtel.SpanData.Link] {
+    get
+  }
+  public var status: SplunkOtel.Status {
+    get
+  }
+  public var endTime: Foundation.Date {
+    get
+  }
+  public var hasRemoteParent: Swift.Bool {
+    get
+  }
+  public var hasEnded: Swift.Bool {
+    get
+  }
+  public var totalRecordedEvents: Swift.Int {
+    get
+  }
+  public var totalRecordedLinks: Swift.Int {
+    get
+  }
+  public var totalAttributeCount: Swift.Int {
+    get
+  }
+  public static func == (lhs: SplunkOtel.SpanData, rhs: SplunkOtel.SpanData) -> Swift.Bool
+  @discardableResult
+  public mutating func settingName(_ name: Swift.String) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingTraceId(_ traceId: SplunkOtel.TraceId) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingSpanId(_ spanId: SplunkOtel.SpanId) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingTraceFlags(_ traceFlags: SplunkOtel.TraceFlags) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingTraceState(_ traceState: SplunkOtel.TraceState) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingAttributes(_ attributes: [Swift.String : SplunkOtel.AttributeValue]) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingStartTime(_ time: Foundation.Date) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingEndTime(_ time: Foundation.Date) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingKind(_ kind: SplunkOtel.SpanKind) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingLinks(_ links: [SplunkOtel.SpanData.Link]) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingParentSpanId(_ parentSpanId: SplunkOtel.SpanId) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingResource(_ resource: SplunkOtel.Resource) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingStatus(_ status: SplunkOtel.Status) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingEvents(_ events: [SplunkOtel.SpanData.Event]) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingHasRemoteParent(_ hasRemoteParent: Swift.Bool) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingHasEnded(_ hasEnded: Swift.Bool) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingTotalRecordedEvents(_ totalRecordedEvents: Swift.Int) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingTotalRecordedLinks(_ totalRecordedLinks: Swift.Int) -> SplunkOtel.SpanData
+  @discardableResult
+  public mutating func settingTotalAttributeCount(_ totalAttributeCount: Swift.Int) -> SplunkOtel.SpanData
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension SplunkOtel.SpanData {
+  public struct Event : Swift.Equatable, Swift.Codable {
+    public var timestamp: Foundation.Date {
+      get
+    }
+    public var name: Swift.String {
+      get
+    }
+    public var attributes: [Swift.String : SplunkOtel.AttributeValue] {
+      get
+    }
+    public init(name: Swift.String, timestamp: Foundation.Date, attributes: [Swift.String : SplunkOtel.AttributeValue]? = nil)
+    public init(timestamp: Foundation.Date, event: SplunkOtel.SpanData.Event)
+    public static func == (a: SplunkOtel.SpanData.Event, b: SplunkOtel.SpanData.Event) -> Swift.Bool
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+extension SplunkOtel.SpanData {
+  public struct Link : Swift.Codable {
+    public let context: SplunkOtel.SpanContext
+    public let attributes: [Swift.String : SplunkOtel.AttributeValue]
+    public init(context: SplunkOtel.SpanContext, attributes: [Swift.String : SplunkOtel.AttributeValue] = [String: AttributeValue]())
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+}
+public func == (lhs: SplunkOtel.SpanData.Link, rhs: SplunkOtel.SpanData.Link) -> Swift.Bool
+public func == (lhs: [SplunkOtel.SpanData.Link], rhs: [SplunkOtel.SpanData.Link]) -> Swift.Bool
+public struct AttributesDictionary {
+  public init(capacity: Swift.Int, valueLengthLimit: Swift.Int = Int.max)
+  public subscript(key: Swift.String) -> SplunkOtel.AttributeValue? {
+    get
+    set
+  }
+  @discardableResult
+  public mutating func updateValue(value: SplunkOtel.AttributeValue, forKey key: Swift.String) -> SplunkOtel.AttributeValue?
+  public mutating func updateValues(attributes: [Swift.String : SplunkOtel.AttributeValue])
+  public mutating func updateValues(attributes: SplunkOtel.AttributesDictionary)
+  public mutating func removeValueForKey(key: Swift.String)
+  public mutating func removeAll(keepCapacity: Swift.Int)
+  public var count: Swift.Int {
+    get
+  }
+  public var numberOfDroppedAttributes: Swift.Int {
+    get
+  }
+  public var values: [SplunkOtel.AttributeValue] {
+    get
+  }
+}
+extension SplunkOtel.AttributesDictionary : Swift.Sequence {
+  public func makeIterator() -> SplunkOtel.AttributesWithCapacityIterator
+  public typealias Element = (Swift.String, SplunkOtel.AttributeValue)
+  public typealias Iterator = SplunkOtel.AttributesWithCapacityIterator
+}
+public struct AttributesWithCapacityIterator : Swift.IteratorProtocol {
+  public mutating func next() -> (Swift.String, SplunkOtel.AttributeValue)?
+  public typealias Element = (Swift.String, SplunkOtel.AttributeValue)
+}
+public enum OpenTelemetryContextKeys : Swift.String {
+  case span
+  case baggage
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct OpenTelemetryContextProvider {
+  public var activeSpan: SplunkOtel.Span? {
+    get
+  }
+  public var activeBaggage: SplunkOtel.Baggage? {
+    get
+  }
+  public func setActiveSpan(_ span: SplunkOtel.Span)
+  public func setActiveBaggage(_ baggage: SplunkOtel.Baggage)
+  public func removeContextForSpan(_ span: SplunkOtel.Span)
+  public func removeContextForBaggage(_ baggage: SplunkOtel.Baggage)
+}
+public protocol ContextPropagators {
+  var textMapPropagator: SplunkOtel.TextMapPropagator { get }
+  var textMapBaggagePropagator: SplunkOtel.TextMapBaggagePropagator { get }
+}
+public enum Status : Swift.Equatable {
+  case ok
+  case unset
+  case error(description: Swift.String)
+  public var isOk: Swift.Bool {
+    get
+  }
+  public var isError: Swift.Bool {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var code: Swift.Int {
+    get
+  }
+  public static func == (a: SplunkOtel.Status, b: SplunkOtel.Status) -> Swift.Bool
+}
+extension SplunkOtel.Status : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension SplunkOtel.Status : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct TraceState : Swift.Equatable, Swift.Codable {
+  public var entries: [SplunkOtel.TraceState.Entry] {
+    get
+  }
+  public init()
+  public init?(entries: [SplunkOtel.TraceState.Entry])
+  public func get(key: Swift.String) -> Swift.String?
+  public func setting(key: Swift.String, value: Swift.String) -> SplunkOtel.TraceState
+  public func removing(key: Swift.String) -> SplunkOtel.TraceState
+  public struct Entry : Swift.Equatable, Swift.Codable {
+    public var key: Swift.String {
+      get
+    }
+    public var value: Swift.String {
+      get
+    }
+    public init?(key: Swift.String, value: Swift.String)
+    public static func == (a: SplunkOtel.TraceState.Entry, b: SplunkOtel.TraceState.Entry) -> Swift.Bool
+    public func encode(to encoder: Swift.Encoder) throws
+    public init(from decoder: Swift.Decoder) throws
+  }
+  public static func == (a: SplunkOtel.TraceState, b: SplunkOtel.TraceState) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol Tracer : AnyObject {
+  func spanBuilder(spanName: Swift.String) -> SplunkOtel.SpanBuilder
+}
+public class MillisClock : SplunkOtel.Clock {
+  public init()
+  public var now: Foundation.Date {
+    get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TracerSdk : SplunkOtel.Tracer {
+  final public let instrumentationScopeInfo: SplunkOtel.InstrumentationScopeInfo
+  public func spanBuilder(spanName: Swift.String) -> SplunkOtel.SpanBuilder
+  @objc deinit
+}
+public enum Samplers {
+  public static var alwaysOn: SplunkOtel.Sampler
+  public static var alwaysOff: SplunkOtel.Sampler
+  public static func traceIdRatio(ratio: Swift.Double) -> SplunkOtel.Sampler
+  public static func parentBased(root: SplunkOtel.Sampler, remoteParentSampled: SplunkOtel.Sampler? = nil, remoteParentNotSampled: SplunkOtel.Sampler? = nil, localParentSampled: SplunkOtel.Sampler? = nil, localParentNotSampled: SplunkOtel.Sampler? = nil) -> SplunkOtel.Sampler
+}
+public protocol Sampler : AnyObject, Swift.CustomStringConvertible {
+  func shouldSample(parentContext: SplunkOtel.SpanContext?, traceId: SplunkOtel.TraceId, name: Swift.String, kind: SplunkOtel.SpanKind, attributes: [Swift.String : SplunkOtel.AttributeValue], parentLinks: [SplunkOtel.SpanData.Link]) -> SplunkOtel.Decision
+}
+public protocol Decision {
+  var isSampled: Swift.Bool { get }
+  var attributes: [Swift.String : SplunkOtel.AttributeValue] { get }
+}
+public protocol SpanExporter : AnyObject {
+  @discardableResult
+  func export(spans: [SplunkOtel.SpanData]) -> SplunkOtel.SpanExporterResultCode
+  func flush() -> SplunkOtel.SpanExporterResultCode
+  func shutdown()
+}
+public enum SpanExporterResultCode {
+  case success
+  case failure
+  public static func == (a: SplunkOtel.SpanExporterResultCode, b: SplunkOtel.SpanExporterResultCode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SimpleSpanProcessor : SplunkOtel.SpanProcessor {
+  public let isStartRequired: Swift.Bool
+  public let isEndRequired: Swift.Bool
+  public func onStart(parentContext: SplunkOtel.SpanContext?, span: SplunkOtel.ReadableSpan)
+  public mutating func onEnd(span: SplunkOtel.ReadableSpan)
+  public func shutdown()
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+  public init(spanExporter: SplunkOtel.SpanExporter)
+  public func reportingOnlySampled(sampled: Swift.Bool) -> SplunkOtel.SimpleSpanProcessor
+}
+public struct Entry : Swift.Equatable, Swift.Comparable {
+  public var key: SplunkOtel.EntryKey {
+    get
+  }
+  public var value: SplunkOtel.EntryValue {
+    get
+  }
+  public var metadata: SplunkOtel.EntryMetadata? {
+    get
+  }
+  public init(key: SplunkOtel.EntryKey, value: SplunkOtel.EntryValue, metadata: SplunkOtel.EntryMetadata?)
+  public static func < (lhs: SplunkOtel.Entry, rhs: SplunkOtel.Entry) -> Swift.Bool
+  public static func == (a: SplunkOtel.Entry, b: SplunkOtel.Entry) -> Swift.Bool
+}
+public class JaegerPropagator : SplunkOtel.TextMapPropagator {
+  public var fields: Swift.Set<Swift.String>
+  public init()
+  public func inject<S>(spanContext: SplunkOtel.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.SpanContext? where G : SplunkOtel.Getter
+  @objc deinit
+}
+public struct BatchSpanProcessor : SplunkOtel.SpanProcessor {
+  public init(spanExporter: SplunkOtel.SpanExporter, scheduleDelay: Foundation.TimeInterval = 5, exportTimeout: Foundation.TimeInterval = 30, maxQueueSize: Swift.Int = 2048, maxExportBatchSize: Swift.Int = 512, willExportCallback: ((inout [SplunkOtel.SpanData]) -> Swift.Void)? = nil)
+  public let isStartRequired: Swift.Bool
+  public let isEndRequired: Swift.Bool
+  public func onStart(parentContext: SplunkOtel.SpanContext?, span: SplunkOtel.ReadableSpan)
+  public func onEnd(span: SplunkOtel.ReadableSpan)
+  public func shutdown()
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+}
+public class JaegerBaggagePropagator : SplunkOtel.TextMapBaggagePropagator {
+  public static let baggageHeader: Swift.String
+  public static let baggagePrefix: Swift.String
+  public var fields: Swift.Set<Swift.String>
+  public init()
+  public func inject<S>(baggage: SplunkOtel.Baggage, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.Baggage? where G : SplunkOtel.Getter
+  @objc deinit
+}
+public struct ArrayWithCapacity<T> {
+  public let capacity: Swift.Int
+  public init(capacity: Swift.Int)
+  public mutating func append(_ item: T)
+}
+extension SplunkOtel.ArrayWithCapacity : Swift.MutableCollection {
+  public var startIndex: Swift.Int {
+    get
+  }
+  public var endIndex: Swift.Int {
+    get
+  }
+  public subscript(index: Swift.Int) -> T {
+    get
+    set
+  }
+  public func index(after i: Swift.Int) -> Swift.Int
+  public typealias Element = T
+  public typealias Index = Swift.Int
+  public typealias Indices = Swift.DefaultIndices<SplunkOtel.ArrayWithCapacity<T>>
+  public typealias Iterator = Swift.IndexingIterator<SplunkOtel.ArrayWithCapacity<T>>
+  public typealias SubSequence = Swift.Slice<SplunkOtel.ArrayWithCapacity<T>>
+}
+public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
+  case `internal`
+  case server
+  case client
+  case producer
+  case consumer
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct EntryMetadata : Swift.Equatable {
+  public var metadata: Swift.String
+  public init?(metadata: Swift.String?)
+  public static func == (a: SplunkOtel.EntryMetadata, b: SplunkOtel.EntryMetadata) -> Swift.Bool
+}
+public class DefaultBaggageBuilder : SplunkOtel.BaggageBuilder {
+  public init()
+  @discardableResult
+  public func setParent(_ parent: SplunkOtel.Baggage?) -> Self
+  @discardableResult
+  public func setNoParent() -> Self
+  @discardableResult
+  public func put(key: SplunkOtel.EntryKey, value: SplunkOtel.EntryValue, metadata: SplunkOtel.EntryMetadata?) -> Self
+  @discardableResult
+  public func put(key: Swift.String, value: Swift.String, metadata: Swift.String? = nil) -> Self
+  @discardableResult
+  public func remove(key: SplunkOtel.EntryKey) -> Self
+  public func build() -> SplunkOtel.Baggage
+  @objc deinit
+}
+public protocol Span : AnyObject, Swift.CustomStringConvertible {
+  var kind: SplunkOtel.SpanKind { get }
+  var context: SplunkOtel.SpanContext { get }
+  var isRecording: Swift.Bool { get }
+  var status: SplunkOtel.Status { get set }
+  var name: Swift.String { get set }
+  func setAttribute(key: Swift.String, value: SplunkOtel.AttributeValue?)
+  func addEvent(name: Swift.String)
+  func addEvent(name: Swift.String, timestamp: Foundation.Date)
+  func addEvent(name: Swift.String, attributes: [Swift.String : SplunkOtel.AttributeValue])
+  func addEvent(name: Swift.String, attributes: [Swift.String : SplunkOtel.AttributeValue], timestamp: Foundation.Date)
+  func end()
+  func end(time: Foundation.Date)
+}
+extension SplunkOtel.Span {
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: SplunkOtel.Span, rhs: SplunkOtel.Span) -> Swift.Bool
+}
+extension SplunkOtel.Span {
+  public func setAttribute(key: Swift.String, value: Swift.String)
+  public func setAttribute(key: Swift.String, value: Swift.Int)
+  public func setAttribute(key: Swift.String, value: Swift.Double)
+  public func setAttribute(key: Swift.String, value: Swift.Bool)
+  public func setAttribute(key: SplunkOtel.SemanticAttributes, value: Swift.String)
+  public func setAttribute(key: SplunkOtel.SemanticAttributes, value: Swift.Int)
+  public func setAttribute(key: SplunkOtel.SemanticAttributes, value: Swift.Double)
+  public func setAttribute(key: SplunkOtel.SemanticAttributes, value: Swift.Bool)
+}
+extension SplunkOtel.Span {
+  public func putHttpHostAttribute(string hostName: Swift.String, int port: Swift.Int)
+  public func putHttpStatusCode(statusCode: Swift.Int, reasonPhrase: Swift.String)
+}
+public struct DefaultContextPropagators : SplunkOtel.ContextPropagators {
+  public var textMapPropagator: SplunkOtel.TextMapPropagator
+  public var textMapBaggagePropagator: SplunkOtel.TextMapBaggagePropagator
+  public init()
+  public init(textPropagators: [SplunkOtel.TextMapPropagator], baggagePropagator: SplunkOtel.TextMapBaggagePropagator)
+  public mutating func addTextMapPropagator(textFormat: SplunkOtel.TextMapPropagator)
+}
+@_hasMissingDesignatedInitializers public class DefaultBaggageManager : SplunkOtel.BaggageManager {
+  public static var instance: SplunkOtel.DefaultBaggageManager
+  public func baggageBuilder() -> SplunkOtel.BaggageBuilder
+  public func getCurrentBaggage() -> SplunkOtel.Baggage?
+  @objc deinit
+}
+public struct SpanContext : Swift.Equatable, Swift.CustomStringConvertible, Swift.Hashable, Swift.Codable {
+  public var traceId: SplunkOtel.TraceId {
+    get
+  }
+  public var spanId: SplunkOtel.SpanId {
+    get
+  }
+  public var traceFlags: SplunkOtel.TraceFlags {
+    get
+  }
+  public var traceState: SplunkOtel.TraceState
+  public let isRemote: Swift.Bool
+  public static func create(traceId: SplunkOtel.TraceId, spanId: SplunkOtel.SpanId, traceFlags: SplunkOtel.TraceFlags, traceState: SplunkOtel.TraceState) -> SplunkOtel.SpanContext
+  public static func createFromRemoteParent(traceId: SplunkOtel.TraceId, spanId: SplunkOtel.SpanId, traceFlags: SplunkOtel.TraceFlags, traceState: SplunkOtel.TraceState) -> SplunkOtel.SpanContext
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var isSampled: Swift.Bool {
+    get
+  }
+  public static func == (lhs: SplunkOtel.SpanContext, rhs: SplunkOtel.SpanContext) -> Swift.Bool
+  public var description: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SpanLimits : Swift.Equatable {
+  public var attributeCountLimit: Swift.Int {
+    get
+  }
+  public var eventCountLimit: Swift.Int {
+    get
+  }
+  public var linkCountLimit: Swift.Int {
+    get
+  }
+  public var attributePerEventCountLimit: Swift.Int {
+    get
+  }
+  public var attributePerLinkCountLimit: Swift.Int {
+    get
+  }
+  public init()
+  @discardableResult
+  public func settingAttributeCountLimit(_ number: Swift.UInt) -> SplunkOtel.SpanLimits
+  @discardableResult
+  public func settingEventCountLimit(_ number: Swift.UInt) -> SplunkOtel.SpanLimits
+  @discardableResult
+  public func settingLinkCountLimit(_ number: Swift.UInt) -> SplunkOtel.SpanLimits
+  @discardableResult
+  public func settingAttributePerEventCountLimit(_ number: Swift.UInt) -> SplunkOtel.SpanLimits
+  @discardableResult
+  public func settingAttributePerLinkCountLimit(_ number: Swift.UInt) -> SplunkOtel.SpanLimits
+  public static func == (lhs: SplunkOtel.SpanLimits, rhs: SplunkOtel.SpanLimits) -> Swift.Bool
+}
+public class TracerProviderBuilder {
+  public var clock: SplunkOtel.Clock {
+    get
+  }
+  public var idGenerator: SplunkOtel.IdGenerator {
+    get
+  }
+  public var resource: SplunkOtel.Resource {
+    get
+  }
+  public var spanLimits: SplunkOtel.SpanLimits {
+    get
+  }
+  public var sampler: SplunkOtel.Sampler {
+    get
+  }
+  public var spanProcessors: [SplunkOtel.SpanProcessor] {
+    get
+  }
+  public init()
+  public func with(clock: SplunkOtel.Clock) -> Self
+  public func with(idGenerator: SplunkOtel.IdGenerator) -> Self
+  public func with(resource: SplunkOtel.Resource) -> Self
+  public func with(spanLimits: SplunkOtel.SpanLimits) -> Self
+  public func with(sampler: SplunkOtel.Sampler) -> Self
+  public func add(spanProcessor: SplunkOtel.SpanProcessor) -> Self
+  public func add(spanProcessors: [SplunkOtel.SpanProcessor]) -> Self
+  public func build() -> SplunkOtel.TracerProviderSdk
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DefaultBaggageManagerProvider : SplunkOtel.BaggageManagerProvider {
+  public static var instance: SplunkOtel.DefaultBaggageManagerProvider
+  public func create() -> SplunkOtel.BaggageManager
+  @objc deinit
+}
+public enum ExportResult {
+  case success
+  case failure
+  public static func == (a: SplunkOtel.ExportResult, b: SplunkOtel.ExportResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct OpenTelemetry {
+  public static var instance: SplunkOtel.OpenTelemetry
+  public var tracerProvider: SplunkOtel.TracerProvider {
+    get
+  }
+  public var baggageManager: SplunkOtel.BaggageManager {
+    get
+  }
+  public var propagators: SplunkOtel.ContextPropagators {
+    get
+  }
+  public var contextProvider: SplunkOtel.OpenTelemetryContextProvider {
+    get
+  }
+  public static func registerTracerProvider(tracerProvider: SplunkOtel.TracerProvider)
+  public static func registerBaggageManager(baggageManager: SplunkOtel.BaggageManager)
+  public static func registerPropagators(textPropagators: [SplunkOtel.TextMapPropagator], baggagePropagator: SplunkOtel.TextMapBaggagePropagator)
+  public static func registerContextManager(contextManager: SplunkOtel.ContextManager)
+}
+public protocol TextMapPropagator {
+  var fields: Swift.Set<Swift.String> { get }
+  func inject<S>(spanContext: SplunkOtel.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  @discardableResult
+  func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.SpanContext? where G : SplunkOtel.Getter
+}
+public protocol Setter {
+  func set(carrier: inout [Swift.String : Swift.String], key: Swift.String, value: Swift.String)
+}
+public protocol Getter {
+  func get(carrier: [Swift.String : Swift.String], key: Swift.String) -> [Swift.String]?
+}
+public protocol IdGenerator {
+  func generateSpanId() -> SplunkOtel.SpanId
+  func generateTraceId() -> SplunkOtel.TraceId
+}
+final public class DefaultBaggage : SplunkOtel.Baggage, Swift.Equatable {
+  public init(entries: [SplunkOtel.EntryKey : SplunkOtel.Entry?])
+  public static func baggageBuilder() -> SplunkOtel.BaggageBuilder
+  final public func getEntries() -> [SplunkOtel.Entry]
+  final public func getEntryValue(key: SplunkOtel.EntryKey) -> SplunkOtel.EntryValue?
+  public static func == (lhs: SplunkOtel.DefaultBaggage, rhs: SplunkOtel.DefaultBaggage) -> Swift.Bool
+  @objc deinit
+}
+public protocol SpanProcessor {
+  var isStartRequired: Swift.Bool { get }
+  var isEndRequired: Swift.Bool { get }
+  func onStart(parentContext: SplunkOtel.SpanContext?, span: SplunkOtel.ReadableSpan)
+  mutating func onEnd(span: SplunkOtel.ReadableSpan)
+  mutating func shutdown()
+  func forceFlush(timeout: Foundation.TimeInterval?)
+}
+public protocol TracerProvider {
+  func get(instrumentationName: Swift.String, instrumentationVersion: Swift.String?) -> SplunkOtel.Tracer
+}
+public protocol BaggageManagerProvider {
+  func create() -> SplunkOtel.BaggageManager
+}
+extension Swift.Double {
+  public var toMilliseconds: Swift.UInt64 {
+    get
+  }
+  public var toMicroseconds: Swift.UInt64 {
+    get
+  }
+  public var toNanoseconds: Swift.UInt64 {
+    get
+  }
+  public static func fromMilliseconds(_ millis: Swift.Int64) -> Foundation.TimeInterval
+  public static func fromMicroseconds(_ micros: Swift.Int64) -> Foundation.TimeInterval
+  public static func fromNanoseconds(_ nanos: Swift.Int64) -> Foundation.TimeInterval
+}
+public protocol SpanBuilder : AnyObject {
+  @discardableResult
+  func setParent(_ parent: SplunkOtel.Span) -> Self
+  @discardableResult
+  func setParent(_ parent: SplunkOtel.SpanContext) -> Self
+  @discardableResult
+  func setNoParent() -> Self
+  @discardableResult
+  func addLink(spanContext: SplunkOtel.SpanContext) -> Self
+  @discardableResult
+  func addLink(spanContext: SplunkOtel.SpanContext, attributes: [Swift.String : SplunkOtel.AttributeValue]) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.String) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.Int) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.Double) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.Bool) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: SplunkOtel.AttributeValue) -> Self
+  @discardableResult
+  func setSpanKind(spanKind: SplunkOtel.SpanKind) -> Self
+  @discardableResult
+  func setStartTime(time: Foundation.Date) -> Self
+  @discardableResult
+  func setActive(_ active: Swift.Bool) -> Self
+  func startSpan() -> SplunkOtel.Span
+}
+extension SplunkOtel.SpanBuilder {
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.String) -> Self
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.Int) -> Self
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.Double) -> Self
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.Bool) -> Self
+}
+public protocol BaggageBuilder : AnyObject {
+  @discardableResult
+  func setParent(_ parent: SplunkOtel.Baggage?) -> Self
+  @discardableResult
+  func setNoParent() -> Self
+  @discardableResult
+  func put(key: SplunkOtel.EntryKey, value: SplunkOtel.EntryValue, metadata: SplunkOtel.EntryMetadata?) -> Self
+  @discardableResult
+  func remove(key: SplunkOtel.EntryKey) -> Self
+  func build() -> SplunkOtel.Baggage
+}
+public enum SemanticAttributes : Swift.String {
+  case awsLambdaInvokedArn
+  case dbSystem
+  case dbConnectionString
+  case dbUser
+  case dbJdbcDriverClassname
+  case dbName
+  case dbStatement
+  case dbOperation
+  case netPeerName
+  case netPeerIp
+  case netPeerPort
+  case netTransport
+  case dbMssqlInstanceName
+  case dbCassandraKeyspace
+  case dbCassandraPageSize
+  case dbCassandraConsistencyLevel
+  case dbCassandraTable
+  case dbCassandraIdempotence
+  case dbCassandraSpeculativeExecutionCount
+  case dbCassandraCoordinatorId
+  case dbCassandraCoordinatorDc
+  case dbHbaseNamespace
+  case dbRedisDatabaseIndex
+  case dbMongodbCollection
+  case dbSqlTable
+  case exceptionType
+  case exceptionMessage
+  case exceptionStacktrace
+  case exceptionEscaped
+  case faasTrigger
+  case faasExecution
+  case faasDocumentCollection
+  case faasDocumentOperation
+  case faasDocumentTime
+  case faasDocumentName
+  case httpMethod
+  case httpUrl
+  case httpTarget
+  case httpHost
+  case httpScheme
+  case httpStatusCode
+  case httpFlavor
+  case httpUserAgent
+  case httpRequestContentLength
+  case httpRequestContentLengthUncompressed
+  case httpResponseContentLength
+  case httpResponseContentLengthUncompressed
+  case httpServerName
+  case httpRoute
+  case httpClientIp
+  case netHostIp
+  case netHostPort
+  case netHostName
+  case netHostConnectionType
+  case netHostConnectionSubtype
+  case netHostCarrierName
+  case netHostCarrierMcc
+  case netHostCarrierMnc
+  case netHostCarrierIcc
+  case messagingSystem
+  case messagingDestination
+  case messagingDestinationKind
+  case messagingTempDestination
+  case messagingProtocol
+  case messagingProtocolVersion
+  case messagingUrl
+  case messagingMessageId
+  case messagingConversationId
+  case messagingMessagePayloadSizeBytes
+  case messagingMessagePayloadCompressedSizeBytes
+  case faasTime
+  case faasCron
+  case faasColdstart
+  case faasInvokedName
+  case faasInvokedProvider
+  case faasInvokedRegion
+  case peerService
+  case enduserId
+  case enduserRole
+  case enduserScope
+  case threadId
+  case threadName
+  case codeFunction
+  case codeNamespace
+  case codeFilepath
+  case codeLineno
+  case rpcSystem
+  case rpcService
+  case rpcMethod
+  case awsDynamodbTableNames
+  case awsDynamodbConsumedCapacity
+  case awsDynamodbItemCollectionMetrics
+  case awsDynamodbProvisionedReadCapacity
+  case awsDynamodbProvisionedWriteCapacity
+  case awsDynamodbConsistentRead
+  case awsDynamodbProjection
+  case awsDynamodbLimit
+  case awsDynamodbAttributesToGet
+  case awsDynamodbIndexName
+  case awsDynamodbSelect
+  case awsDynamodbGlobalSecondaryIndexes
+  case awsDynamodbLocalSecondaryIndexes
+  case awsDynamodbExclusiveStartTable
+  case awsDynamodbTableCount
+  case awsDynamodbScanForward
+  case awsDynamodbSegment
+  case awsDynamodbTotalSegments
+  case awsDynamodbCount
+  case awsDynamodbScannedCount
+  case awsDynamodbAttributeDefinitions
+  case awsDynamodbGlobalSecondaryIndexUpdates
+  case messagingOperation
+  case messagingConsumerId
+  case messagingRabbitmqRoutingKey
+  case messagingKafkaMessageKey
+  case messagingKafkaConsumerGroup
+  case messagingKafkaClientId
+  case messagingKafkaPartition
+  case messagingKafkaTombstone
+  case rpcGrpcStatusCode
+  case rpcJsonrpcVersion
+  case rpcJsonrpcRequestId
+  case rpcJsonrpcErrorCode
+  case rpcJsonrpcErrorMessage
+  case messageType
+  case messageId
+  case messageCompressedSize
+  case messageUncompressedSize
+  case exception
+  public struct DbSystemValues : Swift.CustomStringConvertible {
+    public static let otherSql: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let mssql: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let mysql: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let oracle: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let db2: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let postgresql: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let redshift: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let hive: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let cloudscape: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let hsqldb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let progress: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let maxdb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let hanadb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let ingres: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let firstsql: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let edb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let cache: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let adabas: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let firebird: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let derby: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let filemaker: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let informix: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let instantdb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let interbase: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let mariadb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let netezza: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let pervasive: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let pointbase: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let sqlite: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let sybase: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let teradata: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let vertica: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let h2: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let coldfusion: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let cassandra: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let hbase: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let mongodb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let redis: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let couchbase: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let couchdb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let cosmosdb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let dynamodb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let neo4j: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let geode: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let elasticsearch: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let memcached: SplunkOtel.SemanticAttributes.DbSystemValues
+    public static let cockroachdb: SplunkOtel.SemanticAttributes.DbSystemValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum NetTransportValues : Swift.String {
+    case ip_tcp
+    case ip_udp
+    case ip
+    case unix
+    case pipe
+    case inproc
+    case other
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum DbCassandraConsistencyLevelValues : Swift.String {
+    case all
+    case each_quorum
+    case quorum
+    case local_quorum
+    case one
+    case two
+    case three
+    case local_one
+    case any
+    case serial
+    case local_serial
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum FaasTriggerValues : Swift.String {
+    case datasource
+    case http
+    case pubsub
+    case timer
+    case other
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct FaasDocumentOperationValues : Swift.CustomStringConvertible {
+    public static let insert: SplunkOtel.SemanticAttributes.FaasDocumentOperationValues
+    public static let edit: SplunkOtel.SemanticAttributes.FaasDocumentOperationValues
+    public static let delete: SplunkOtel.SemanticAttributes.FaasDocumentOperationValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct HttpFlavorValues : Swift.CustomStringConvertible {
+    public static let http10: SplunkOtel.SemanticAttributes.HttpFlavorValues
+    public static let http11: SplunkOtel.SemanticAttributes.HttpFlavorValues
+    public static let http20: SplunkOtel.SemanticAttributes.HttpFlavorValues
+    public static let spdy: SplunkOtel.SemanticAttributes.HttpFlavorValues
+    public static let quic: SplunkOtel.SemanticAttributes.HttpFlavorValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct NetHostConnectionTypeValues : Swift.CustomStringConvertible {
+    public static let wifi: SplunkOtel.SemanticAttributes.NetHostConnectionTypeValues
+    public static let wired: SplunkOtel.SemanticAttributes.NetHostConnectionTypeValues
+    public static let cell: SplunkOtel.SemanticAttributes.NetHostConnectionTypeValues
+    public static let unavailable: SplunkOtel.SemanticAttributes.NetHostConnectionTypeValues
+    public static let unknown: SplunkOtel.SemanticAttributes.NetHostConnectionTypeValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct NetHostConnectionSubtypeValues : Swift.CustomStringConvertible {
+    public static let gprs: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let edge: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let umts: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let cdma: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let evdo0: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let evdoA: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let cdma20001xrtt: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let hsdpa: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let hsupa: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let hspa: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let iden: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let evdoB: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let lte: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let ehrpd: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let hspap: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let gsm: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let tdScdma: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let iwlan: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let nr: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let nrnsa: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public static let lteCa: SplunkOtel.SemanticAttributes.NetHostConnectionSubtypeValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum MessagingDestinationKindValues : Swift.String {
+    case queue
+    case topic
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct FaasInvokedProviderValues : Swift.CustomStringConvertible {
+    public static let alibabaCloud: SplunkOtel.SemanticAttributes.FaasInvokedProviderValues
+    public static let aws: SplunkOtel.SemanticAttributes.FaasInvokedProviderValues
+    public static let azure: SplunkOtel.SemanticAttributes.FaasInvokedProviderValues
+    public static let gcp: SplunkOtel.SemanticAttributes.FaasInvokedProviderValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum MessagingOperationValues : Swift.String {
+    case receive
+    case process
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum RpcGrpcStatusCodeValues : Swift.Int {
+    case ok
+    case cancelled
+    case unknown
+    case invalid_argument
+    case deadline_exceeded
+    case not_found
+    case already_exists
+    case permission_denied
+    case resource_exhausted
+    case failed_precondition
+    case aborted
+    case out_of_range
+    case unimplemented
+    case `internal`
+    case unavailable
+    case data_loss
+    case unauthenticated
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum MessageTypeValues : Swift.String {
+    case sent
+    case received
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct EntryValue : Swift.Equatable {
+  public var string: Swift.String {
+    get
+  }
+  public init?(string: Swift.String)
+  public static func == (a: SplunkOtel.EntryValue, b: SplunkOtel.EntryValue) -> Swift.Bool
+}
+extension Foundation.URLSessionTask {
+  @objc dynamic open func splunk_swizzled_setState(state: Foundation.URLSessionTask.State)
+  @objc dynamic open func splunk_swizzled_resume()
+}
+public struct ZipkinTraceExporterOptions {
+  public init(endpoint: Swift.String = "http://localhost:9411/api/v2/spans", serviceName: Swift.String = "Open Telemetry Exporter", timeoutSeconds: Foundation.TimeInterval = 10.0, useShortTraceIds: Swift.Bool = false, additionalHeaders: [Swift.String : Swift.String] = [String:String]())
+}
+public struct InstrumentationScopeInfo : Swift.Hashable, Swift.Codable {
+  public var name: Swift.String {
+    get
+  }
+  public var version: Swift.String? {
+    get
+  }
+  public var schemaUrl: Swift.String? {
+    get
+  }
+  public init()
+  public init(name: Swift.String, version: Swift.String? = nil, schemaUrl: Swift.String? = nil)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SplunkOtel.InstrumentationScopeInfo, b: SplunkOtel.InstrumentationScopeInfo) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class RecordEventsReadableSpan : SplunkOtel.ReadableSpan {
+  public var isRecording: Swift.Bool
+  public var name: Swift.String {
+    get
+    set
+  }
+  public var spanLimits: SplunkOtel.SpanLimits {
+    get
+  }
+  public var context: SplunkOtel.SpanContext {
+    get
+  }
+  public var parentContext: SplunkOtel.SpanContext? {
+    get
+  }
+  public var hasRemoteParent: Swift.Bool {
+    get
+  }
+  public var spanProcessor: SplunkOtel.SpanProcessor {
+    get
+  }
+  public var links: [SplunkOtel.SpanData.Link] {
+    get
+  }
+  public var totalRecordedLinks: Swift.Int {
+    get
+  }
+  public var maxNumberOfAttributes: Swift.Int {
+    get
+  }
+  public var maxNumberOfAttributesPerEvent: Swift.Int {
+    get
+  }
+  public var kind: SplunkOtel.SpanKind {
+    get
+  }
+  public var clock: SplunkOtel.Clock {
+    get
+  }
+  public var resource: SplunkOtel.Resource {
+    get
+  }
+  public var instrumentationScopeInfo: SplunkOtel.InstrumentationScopeInfo {
+    get
+  }
+  public var startTime: Foundation.Date {
+    get
+  }
+  public var events: SplunkOtel.ArrayWithCapacity<SplunkOtel.SpanData.Event> {
+    get
+  }
+  public var totalAttributeCount: Swift.Int {
+    get
+  }
+  public var totalRecordedEvents: Swift.Int {
+    get
+  }
+  public var status: SplunkOtel.Status {
+    get
+    set
+  }
+  public var latency: Foundation.TimeInterval {
+    get
+  }
+  public var endTime: Foundation.Date? {
+    get
+  }
+  public var hasEnded: Swift.Bool {
+    get
+  }
+  public static func startSpan(context: SplunkOtel.SpanContext, name: Swift.String, instrumentationScopeInfo: SplunkOtel.InstrumentationScopeInfo, kind: SplunkOtel.SpanKind, parentContext: SplunkOtel.SpanContext?, hasRemoteParent: Swift.Bool, spanLimits: SplunkOtel.SpanLimits, spanProcessor: SplunkOtel.SpanProcessor, clock: SplunkOtel.Clock, resource: SplunkOtel.Resource, attributes: SplunkOtel.AttributesDictionary, links: [SplunkOtel.SpanData.Link], totalRecordedLinks: Swift.Int, startTime: Foundation.Date?) -> SplunkOtel.RecordEventsReadableSpan
+  public func toSpanData() -> SplunkOtel.SpanData
+  public func setAttribute(key: Swift.String, value: SplunkOtel.AttributeValue?)
+  public func addEvent(name: Swift.String)
+  public func addEvent(name: Swift.String, timestamp: Foundation.Date)
+  public func addEvent(name: Swift.String, attributes: [Swift.String : SplunkOtel.AttributeValue])
+  public func addEvent(name: Swift.String, attributes: [Swift.String : SplunkOtel.AttributeValue], timestamp: Foundation.Date)
+  public func end()
+  public func end(time: Foundation.Date)
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public protocol ContextManager : AnyObject {
+  func getCurrentContextValue(forKey: SplunkOtel.OpenTelemetryContextKeys) -> Swift.AnyObject?
+  func setCurrentContextValue(forKey: SplunkOtel.OpenTelemetryContextKeys, value: Swift.AnyObject)
+  func removeContextValue(forKey: SplunkOtel.OpenTelemetryContextKeys, value: Swift.AnyObject)
+}
+public class MultiSpanExporter : SplunkOtel.SpanExporter {
+  public init(spanExporters: [SplunkOtel.SpanExporter])
+  public func export(spans: [SplunkOtel.SpanData]) -> SplunkOtel.SpanExporterResultCode
+  public func flush() -> SplunkOtel.SpanExporterResultCode
+  public func shutdown()
+  @objc deinit
+}
+public class MonotonicClock : SplunkOtel.Clock {
+  public init(clock: SplunkOtel.Clock)
+  public var now: Foundation.Date {
+    get
+  }
+  @objc deinit
+}
+public protocol Baggage : AnyObject {
+  static func baggageBuilder() -> SplunkOtel.BaggageBuilder
+  func getEntries() -> [SplunkOtel.Entry]
+  func getEntryValue(key: SplunkOtel.EntryKey) -> SplunkOtel.EntryValue?
+}
+public func == (lhs: SplunkOtel.Baggage, rhs: SplunkOtel.Baggage) -> Swift.Bool
+extension UIKit.UIApplication {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func splunk_swizzled_sendAction(_ action: ObjectiveC.Selector, to target: Any?, from sender: Any?, for event: UIKit.UIEvent?) -> Swift.Bool
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func splunk_swizzled_viewDidLoad()
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func splunk_swizzled_viewDidAppear(_ animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func splunk_swizzled_viewDidDisappear(_ animated: Swift.Bool)
+}
+public struct TraceFlags : Swift.Equatable, Swift.CustomStringConvertible, Swift.Codable {
+  public var byte: Swift.UInt8 {
+    get
+  }
+  public var hexString: Swift.String {
+    get
+  }
+  public init()
+  public init(fromByte src: Swift.UInt8)
+  public init(fromHexString hex: Swift.String, withOffset offset: Swift.Int = 0)
+  public var sampled: Swift.Bool {
+    get
+  }
+  public mutating func setIsSampled(_ isSampled: Swift.Bool)
+  public func settingIsSampled(_ isSampled: Swift.Bool) -> SplunkOtel.TraceFlags
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: SplunkOtel.TraceFlags, b: SplunkOtel.TraceFlags) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Resource : Swift.Equatable, Swift.Hashable, Swift.Codable {
+  public var attributes: [Swift.String : SplunkOtel.AttributeValue]
+  public init()
+  public init(attributes: [Swift.String : SplunkOtel.AttributeValue])
+  public mutating func merge(other: SplunkOtel.Resource)
+  public func merging(other: SplunkOtel.Resource) -> SplunkOtel.Resource
+  public static func == (a: SplunkOtel.Resource, b: SplunkOtel.Resource) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol BaggageManager : AnyObject {
+  func baggageBuilder() -> SplunkOtel.BaggageBuilder
+}
+public protocol BinaryFormattable {
+  func fromByteArray(bytes: [Swift.UInt8]) -> SplunkOtel.SpanContext?
+  func toByteArray(spanContext: SplunkOtel.SpanContext) -> [Swift.UInt8]
+}
+public class ZipkinBaggagePropagator : SplunkOtel.TextMapBaggagePropagator {
+  public static let baggagePrefix: Swift.String
+  final public let fields: Swift.Set<Swift.String>
+  public init()
+  public func inject<S>(baggage: SplunkOtel.Baggage, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.Baggage? where G : SplunkOtel.Getter
+  @objc deinit
+}
+public struct W3CTraceContextPropagator : SplunkOtel.TextMapPropagator {
+  public init()
+  public let fields: Swift.Set<Swift.String>
+  public func inject<S>(spanContext: SplunkOtel.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.SpanContext? where G : SplunkOtel.Getter
+}
+public protocol TextMapBaggagePropagator {
+  var fields: Swift.Set<Swift.String> { get }
+  func inject<S>(baggage: SplunkOtel.Baggage, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  @discardableResult
+  func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.Baggage? where G : SplunkOtel.Getter
+}
+public struct RandomIdGenerator : SplunkOtel.IdGenerator {
+  public init()
+  public func generateSpanId() -> SplunkOtel.SpanId
+  public func generateTraceId() -> SplunkOtel.TraceId
+}
+@_hasMissingDesignatedInitializers public class DefaultTracer : SplunkOtel.Tracer {
+  public static var instance: SplunkOtel.DefaultTracer
+  public func spanBuilder(spanName: Swift.String) -> SplunkOtel.SpanBuilder
+  @objc deinit
+}
+public class B3Propagator : SplunkOtel.TextMapPropagator {
+  final public let fields: Swift.Set<Swift.String>
+  public init()
+  public init(_ singleHeaderInjection: Swift.Bool)
+  public func inject<S>(spanContext: SplunkOtel.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : SplunkOtel.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> SplunkOtel.SpanContext? where G : SplunkOtel.Getter
+  @objc deinit
+}
+public struct SpanId : Swift.Equatable, Swift.Comparable, Swift.Hashable, Swift.CustomStringConvertible, Swift.Codable {
+  public static let size: Swift.Int
+  public static let invalidId: Swift.UInt64
+  public static let invalid: SplunkOtel.SpanId
+  public static func getSize() -> Swift.Int
+  public init(id: Swift.UInt64)
+  public init()
+  public static func random() -> SplunkOtel.SpanId
+  public init(fromBytes bytes: Swift.Array<Swift.UInt8>, withOffset offset: Swift.Int = 0)
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.UInt8>, withOffset offset: Swift.Int = 0)
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.Character>, withOffset offset: Swift.Int = 0)
+  public func copyBytesTo(dest: inout Foundation.Data, destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout Swift.Array<Swift.UInt8>, destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout Swift.ArraySlice<Swift.UInt8>, destOffset: Swift.Int)
+  public init(fromHexString hex: Swift.String, withOffset offset: Swift.Int = 0)
+  public var hexString: Swift.String {
+    get
+  }
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public static func < (lhs: SplunkOtel.SpanId, rhs: SplunkOtel.SpanId) -> Swift.Bool
+  public static func == (lhs: SplunkOtel.SpanId, rhs: SplunkOtel.SpanId) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public class StdoutExporter : SplunkOtel.SpanExporter {
+  public init(isDebug: Swift.Bool = false)
+  public func export(spans: [SplunkOtel.SpanData]) -> SplunkOtel.SpanExporterResultCode
+  public func flush() -> SplunkOtel.SpanExporterResultCode
+  public func shutdown()
+  @objc deinit
+}
+public struct EntryKey : Swift.Equatable, Swift.Comparable, Swift.Hashable {
+  public var name: Swift.String {
+    get
+  }
+  public init?(name: Swift.String)
+  public static func < (lhs: SplunkOtel.EntryKey, rhs: SplunkOtel.EntryKey) -> Swift.Bool
+  public static func == (a: SplunkOtel.EntryKey, b: SplunkOtel.EntryKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct StringUtils {
+  public static func isPrintableString(_ string: Swift.String) -> Swift.Bool
+  public static func isValidMetricName(_ metricName: Swift.String) -> Swift.Bool
+}
+extension SplunkOtel.ResourceAttributes : Swift.Equatable {}
+extension SplunkOtel.ResourceAttributes : Swift.Hashable {}
+extension SplunkOtel.ResourceAttributes : Swift.RawRepresentable {}
+extension SplunkOtel.ResourceAttributes.AwsEcsLaunchtypeValues : Swift.Equatable {}
+extension SplunkOtel.ResourceAttributes.AwsEcsLaunchtypeValues : Swift.Hashable {}
+extension SplunkOtel.ResourceAttributes.AwsEcsLaunchtypeValues : Swift.RawRepresentable {}
+extension SplunkOtel.OpenTelemetryContextKeys : Swift.Equatable {}
+extension SplunkOtel.OpenTelemetryContextKeys : Swift.Hashable {}
+extension SplunkOtel.OpenTelemetryContextKeys : Swift.RawRepresentable {}
+extension SplunkOtel.SpanExporterResultCode : Swift.Equatable {}
+extension SplunkOtel.SpanExporterResultCode : Swift.Hashable {}
+extension SplunkOtel.SpanKind : Swift.Hashable {}
+extension SplunkOtel.SpanKind : Swift.RawRepresentable {}
+extension SplunkOtel.ExportResult : Swift.Equatable {}
+extension SplunkOtel.ExportResult : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.NetTransportValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.NetTransportValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.NetTransportValues : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.DbCassandraConsistencyLevelValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.DbCassandraConsistencyLevelValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.DbCassandraConsistencyLevelValues : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.FaasTriggerValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.FaasTriggerValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.FaasTriggerValues : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.MessagingDestinationKindValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.MessagingDestinationKindValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.MessagingDestinationKindValues : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.MessagingOperationValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.MessagingOperationValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.MessagingOperationValues : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.RpcGrpcStatusCodeValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.RpcGrpcStatusCodeValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.RpcGrpcStatusCodeValues : Swift.RawRepresentable {}
+extension SplunkOtel.SemanticAttributes.MessageTypeValues : Swift.Equatable {}
+extension SplunkOtel.SemanticAttributes.MessageTypeValues : Swift.Hashable {}
+extension SplunkOtel.SemanticAttributes.MessageTypeValues : Swift.RawRepresentable {}
